@@ -1,7 +1,7 @@
 #!/bin/bash
 
-file_url1="https://raw.githubusercontent.com/arbs09/filter/main/nginx/bad_paths.conf"
-file_url2="https://raw.githubusercontent.com/arbs09/filter/main/nginx/bad_useragents.conf"
+file_url1="https://raw.githubusercontent.com/arbs09/filter/master/nginx/bad_paths.conf"
+file_url2="https://raw.githubusercontent.com/arbs09/filter/master/nginx/bad_useragents.conf"
 nginx_folder="/etc/nginx/includes"
 
 if [ ! -d "$nginx_folder" ]; then
