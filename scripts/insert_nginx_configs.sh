@@ -16,19 +16,21 @@ if [ ! -d "$nginx_folder" ]; then
 fi
 
 echo "Downloading $file_url1..."
-curl -o "$nginx_folder/$(basename "$file_url1")" "$file_url1"
+curl -s -o "$nginx_folder/$(basename "$file_url1")" "$file_url1"
 if [ $? -eq 0 ]; then
-    echo "Downloaded and copied $(basename "$file_url1") to $nginx_folder"
+    echo "Downloaded and overwritten $(basename "$file_url1") in $nginx_folder"
 else
     echo "Failed to download $file_url1"
     exit 1
 fi
+chmod 644 "$nginx_folder/$(basename "$file_url1")"
 
 echo "Downloading $file_url2..."
-curl -o "$nginx_folder/$(basename "$file_url2")" "$file_url2"
+curl -s -o "$nginx_folder/$(basename "$file_url2")" "$file_url2"
 if [ $? -eq 0 ]; then
-    echo "Downloaded and copied $(basename "$file_url2") to $nginx_folder"
+    echo "Downloaded and overwritten $(basename "$file_url2") in $nginx_folder"
 else
     echo "Failed to download $file_url2"
     exit 1
 fi
+chmod 644 "$nginx_folder/$(basename "$file_url2")"
