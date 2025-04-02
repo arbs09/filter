@@ -2,7 +2,7 @@
 
 file_url1="https://raw.githubusercontent.com/arbs09/filter/master/nginx/bad_paths.conf"
 file_url2="https://raw.githubusercontent.com/arbs09/filter/master/nginx/bad_useragents.conf"
-file_url3="https://raw.githubusercontent.com/arbs09/filter/master/nginx/filter.conf
+file_url3="https://raw.githubusercontent.com/arbs09/filter/master/nginx/filter.conf"
 nginx_folder="/etc/nginx/includes"
 
 if [ ! -d "$nginx_folder" ]; then
