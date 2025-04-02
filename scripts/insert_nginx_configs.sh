@@ -2,6 +2,7 @@
 
 file_url1="https://raw.githubusercontent.com/arbs09/filter/master/nginx/bad_paths.conf"
 file_url2="https://raw.githubusercontent.com/arbs09/filter/master/nginx/bad_useragents.conf"
+file_url3="https://raw.githubusercontent.com/arbs09/filter/master/nginx/filter.conf
 nginx_folder="/etc/nginx/includes"
 
 if [ ! -d "$nginx_folder" ]; then
@@ -34,3 +35,13 @@ else
     exit 1
 fi
 chmod 644 "$nginx_folder/$(basename "$file_url2")"
+
+echo "Downloading $file_url3..."
+curl -s -o "$nginx_folder/$(basename "$file_url3")" "$file_url3"
+if [ $? -eq 0 ]; then
+    echo "Downloaded and overwritten $(basename "$file_url3") in $nginx_folder"
+else
+    echo "Failed to download $file_url3"
+    exit 1
+fi
+chmod 644 "$nginx_folder/$(basename "$file_url3")"
